@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ — Технология будущего | Индивидуальный проект</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #9333ea;
+            --accent: #06b6d4;
+            --bg: #030712;
+            --surface: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* Hero */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(45deg, rgba(79, 70, 229, 0.2), rgba(147, 51, 234, 0.2)),
+                        url('https://unsplash.com') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Content */
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::before {
+            content: '';
+            width: 30px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Columns & Cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 20px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            margin: 30px 0;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .quote {
+            border-left: 4px solid var(--secondary);
+            padding: 20px 30px;
+            background: rgba(147, 51, 234, 0.05);
+            font-style: italic;
+            margin: 30px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--text-muted);
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Искусственный Интеллект</h1>
+        <p style="font-size: 1.4rem;">От простых алгоритмов до цифрового сознания</p>
+    </header>
+
+    <div class="wrapper">
+
+        <section class="section">
+            <h2>Введение и актуальность</h2>
+            <p>В XXI веке <span class="highlight">Искусственный Интеллект (ИИ)</span> перестал быть темой научно-фантастических романов и стал неотъемлемой частью глобальной экономики. Актуальность данной темы обусловлена тем, что ИИ сегодня является «новым электричеством» — базовой технологией, которая меняет методы производства, способы обучения и повседневную жизнь людей.</p>
+            <p>Цель моего проекта — исследовать текущее состояние нейросетей и спрогнозировать их влияние на социальную структуру общества в ближайшие десятилетия.</p>
+            <img src="data:image/jpeg;base64,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" class="img-box" alt="Технологии">
+        </section>
+
+        <section class="section">
+            <h2>Три уровня развития ИИ</h2>
+            <p>Ученые выделяют три ключевых этапа эволюции интеллектуальных систем:</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>ANI (Narrow AI)</h3>
+                    <p>Узкий или слабый ИИ. Специализируется на одной задаче (шахматы, распознавание лиц, перевод). Это то, что мы используем сегодня.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AGI (General AI)</h3>
+                    <p>Общий ИИ. Гипотетический уровень, на котором машина способна выполнить любую интеллектуальную задачу не хуже человека.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>ASI (Super AI)</h3>
+                    <p>Суперинтеллект. Точка, в которой ИИ превосходит совокупный разум всего человечества во всех областях, от творчества до науки.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Влияние на отрасли</h2>
+            <p>Интеграция ИИ происходит неравномерно, но охватывает критически важные узлы цивилизации:</p>
+            <img src="https://i.ytimg.com/vi/B9PL__gVxLI/maxresdefault.jpg" class="img-box" alt="Роботы">
+            <p>1. <strong>Наука и биология:</strong> Нейросети, такие как AlphaFold, совершили прорыв в медицине, предсказав структуру почти всех белков, известных науке. Это сокращает разработку новых лекарств с десятилетий до месяцев.</p>
+            <p>2. <strong>Творчество:</strong> Генеративные модели (Midjourney, ChatGPT) создают контент, который сложно отличить от человеческого. Это ставит под вопрос авторское право и природу человеческого вдохновения.</p>
+            <div class="quote">
+                «Искусственный интеллект — это последний инструмент, который людям когда-либо придется изобретать» — Ник Бостром.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Выводы и прогнозы</h2>
+            <p>К 2030 году ИИ станет персональным ассистентом для каждого жителя планеты. Однако главная задача будущего — не технологическая, а <strong>этическая</strong>. Нам предстоит решить проблему "черного ящика" (непрозрачности принятия решений ИИ) и обеспечить безопасность данных.</p>
+            <p>ИИ — это мощнейший рычаг. В руках человечества он может стать ключом к решению климатического кризиса и бессмертию, либо источником беспрецедентного социального неравенства.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Индивидуальный школьный проект по информатике</p>
+        <p>Выполнил: <strong>Штельмах Захар</strong>, 10 "Б" класс</p>
+        <p>2026</p>
+    </footer>
+
+</body>
+</html>
